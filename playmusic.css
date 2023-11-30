@@ -1,0 +1,170 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: black;
+}
+.container{
+    width: 350px;
+    height: 550px;
+    border-radius: 20px;
+    background-color: rgb(226, 25, 25);
+    box-shadow: 5px 20px 90px  rgb(226, 25, 25);
+    padding: 30px;
+    overflow: hidden;
+    color: white;
+}
+.song-name, .artist {
+    text-align: center;
+    text-transform: capitalize;
+}
+.song-name{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.artist{
+    font-size: 18px;
+}
+.box-disk{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    display: block;
+    margin: 40px auto;
+    background: url(9rain.jpg) no-repeat center center;
+    box-shadow: 0 0 0 5px rgb(143, 43, 43);
+    animation: rotate 20s linear infinite;
+    animation-play-state: paused;
+}
+.box-disk.play {
+    animation-play-state: running;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{   
+        transform: rotate(360deg);
+    }
+}
+.box-disk::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(226, 25, 25);
+}
+.music-slider{
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.seek-bar{
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: lightgreen;
+    -webkit-appearance: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+.seek-bar::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: -400px 0 0 400px rgb(255, 102, 0);
+}
+.current-time,.music-time{
+    font-size: 12px;
+}
+.music-time{
+    position: absolute;
+    float: left;
+    right: 0;
+}
+.controls{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 20px;
+}
+.btn-play{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: coral;    
+    cursor: pointer;
+    border: none;
+}
+.btn-play span{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: white;
+    transition: .5s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    /* clip-path: polygon(x y, x y, x y, x y) */
+}
+.btn-play span:nth-child(2){
+    left: 55%;
+    /* transform-origin: center; */
+}
+
+.btn-play.pause span:nth-child(2) {
+    transform: translateY(-50%) scaleY(0);
+}
+.btn-play.pause span:nth-child(1) {
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%,-50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0 100%);
+}
+.btn-play.pause{
+    animation: pulse 2s linear infinite;
+}
+@keyframes pulse{
+    0%{
+        box-shadow: 0;
+    }
+    50%{
+        box-shadow: 0 0 0 5px #ccc;
+    }
+    100%{   
+        box-shadow: 0 0 0 5px #ccc;
+    }
+}
+.btn{
+    width: 40px;
+    height: 40px;
+    background-color: coral;    
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+}

@@ -1,0 +1,87 @@
+<html
+    __fvdsurfcanyoninserted="1"
+    class="
+        clickberry-extension
+        clickberry-extension-standalone
+        clickberry-extension
+        clickberry-extension-standalone
+        clickberry-extension
+        clickberry-extension-standalone
+    "
+>
+    <head>
+        <meta charset="UTF-8" />
+        <!-- 0. Phần icon của website (thay đổi link đến icon nếu bạn muốn sửa nó) -->
+        <link rel="shortcut icon" type="image/jpg" href="./tt.jpg"/>
+
+        <!-- 1. Đây là phần title của website -->
+        <title>Happy Birthday</title>
+        <link rel="stylesheet" href="./style.css">
+        <script>
+            window.open = function () {};
+            window.print = function () {};
+            // Support hover state for mobile.
+            if (false) {
+                window.ontouchstart = function () {};
+            }
+        </script>
+        <script
+            type="text/javascript"
+            src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"
+        ></script>
+        <meta content="clickberry-extension-here" />
+    </head>
+
+    <body>
+        <link
+            href="https://fonts.googleapis.com/css?family=Wendy+One"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <div class="container">
+            <!-- 2. Dòng chữ Happy Birthday
+            Nếu bạn muốn thêm chữ vào thì phải thay đổi css tương ứng cho nó -->
+            <div class="balloon">
+                <div><span>H</span></div>
+                <div><span>A</span></div>
+                <div><span>P</span></div>
+                <div><span>P</span></div>
+                <div><span>Y</span></div>
+                <div><span>B</span></div>
+                <div><span>I</span></div>
+                <div><span>R</span></div>
+                <div><span>T</span></div>
+                <div><span>H</span></div>
+                <div><span>D</span></div>
+                <div><span>A</span></div>
+                <div><span>Y</span></div>
+                <!--NÚT QUÀ-->
+                <div id="quaa"><a href="vangg.jpg"><span id="qua">QUÀ NÈ</span></a></div>
+                <!--NÚT NHẠC-->
+                <div id="nhacc"><a href="playmusic.html"><span id="nhac">NGHE NHẠC</span></a></div>
+            </div>
+            
+            <div class="avatar">
+                <!-- 3. Avatar -->
+                <img src="./tt.jpg" alt="" class="avatar__img" onclick="showMessage()"/>
+                <!-- 4. Tên  -->
+                <h1 onclick="showMessage()" class="avatar__title">Thúy Trinh</h1>   
+            </div>
+        </div>
+
+        <script>
+            if (document.location.search.match(/type=embed/gi)) {
+                window.parent.postMessage("resize", "*");
+            }
+            function showMessage() {
+                // 6. Lời nhắn hiện ra khi bấm vào tên hoặc avatar
+                swal({
+                    title: "Lời nhắn", 
+                    text: "Chúc mừng sinh nhật Thúy Trinh! Chúc Thúy Trinh ngày càng xinh đẹp, mau trúng số độc đắc để bớt áp lực cột sống một chút nha ^^", 
+                });
+            }
+        </script>
+        
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+</html>
